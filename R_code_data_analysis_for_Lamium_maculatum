@@ -1,0 +1,9 @@
+setwd("C:/Users/guerr/Documents/2) UNIVERSITA'/2) MAGISTRALE - ALMA MATER STUDIORUM/1) LEZIONI (slide, registrazioni)/PRIMO ANNO/2) a scelta/LABORATORY OF PLANT CONSERVATION/Paper and data for Lamium maculatum")
+
+install.packages("readxl")
+library(readxl)
+pollinators <- read_excel("Pollinators.xlsx",
+                          col_types = c("text", "text", "text","numeric", "text", "numeric", "text"))
+
+flowers <- read_excel("plant_lab.xlsx",
+                      col_types = c("numeric","numeric","text","text","numeric","date","numeric","numeric","numeric","text"))
