@@ -7,3 +7,8 @@ pollinators <- read_excel("Pollinators.xlsx",
 
 flowers <- read_excel("plant_lab.xlsx",
                       col_types = c("numeric","numeric","text","text","numeric","date","numeric","numeric","numeric","text"))
+View(flowers)
+View(pollinators)
+
+
+
