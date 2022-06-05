@@ -37,4 +37,12 @@ summary(flowers)
 summary(pollinators)
 
 
+ratio <- flowers$`VIABLE SEEDS`/4
+ratio
+
+test <- flowers$TEST
+
+boxplot((ratio[test=="N"]), (ratio[test=="PS"]), (ratio[test=="SS"]), col="white",
+        names=c("Natural", "Pollen Supplementation", "Spontaneous Selfing"),
+        main="Developed seeds/Total seeds")
 
