@@ -1,0 +1,8 @@
+setwd("C:/lab/")
+biblioedo <- read.csv("Biblio_Edo.csv", header = T, sep = ",")
+
+str(biblioedo)
+
+install.packages("writexl")
+library(writexl)
+write_xlsx(biblioedo, "C:/lab/BiblioEdo.xlsx")
