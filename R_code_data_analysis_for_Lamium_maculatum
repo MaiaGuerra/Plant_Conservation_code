@@ -36,13 +36,19 @@ View(pollinators)
 summary(flowers)
 summary(pollinators)
 
-
-ratio <- flowers$`VIABLE SEEDS`/4
-ratio
+seeds <- flowers$`VIABLE SEEDS`
+ratio <- seeds/4
+aborted_ovules <- flowers$`OVULES ABORTED`
 
 test <- flowers$TEST
 
 boxplot((ratio[test=="N"]), (ratio[test=="PS"]), (ratio[test=="SS"]), col="white",
         names=c("Natural", "Pollen Supplementation", "Spontaneous Selfing"),
         main="Developed seeds/Total seeds")
+
+model <- glm(cbind(seeds, aborted_ovules) ~ test, family = binomial, data = flowers)
+summary(model)
+
+plot(model)
+
 
