@@ -1,14 +1,40 @@
+# Here's our code for the data analysis of our study on reproductive strategy and pollinators for Lamium maculatum
+
+##### PRELIMINARY SETS: WORKING DIRECTORY, PACKAGES AND LIBRARIES #####
+
+# setting of the working directory
 setwd("C:/Users/guerr/Documents/2) UNIVERSITA'/2) MAGISTRALE - ALMA MATER STUDIORUM/1) LEZIONI (slide, registrazioni)/PRIMO ANNO/2) a scelta/LABORATORY OF PLANT CONSERVATION/Paper and data for Lamium maculatum")
 
+# installation of useful packages and libraries
 install.packages("readxl")
 library(readxl)
+
+
+
+##### IMPORT OF THE DATASETS #####
+
+# import of the dataset of the observations on flowers (species latin name, plant number, test, flower number, fruit, viable seeds, ovules aborted, other
+# using function read_excel from library "readxl"
+# specifying the types of data of each column in the argument "col_types"
+flowers <- read_excel("plant_lab_final.xlsx",
+                      col_types = c("text","numeric","text","numeric","numeric","numeric","numeric","text"))
+
+# import of the dataset of the observations on pollinators (species latin name, pollen present, gathering technique, flowers visited, pollination, plot, other) 
+# using same function read_excel from library "readxl" and specifying the types of data of each column in the argument "col_types"
 pollinators <- read_excel("Pollinators.xlsx",
                           col_types = c("text", "text", "text","numeric", "text", "numeric", "text"))
 
-flowers <- read_excel("plant_lab.xlsx",
-                      col_types = c("numeric","numeric","text","text","numeric","date","numeric","numeric","numeric","text"))
+# check of the correct import of datasets
 View(flowers)
 View(pollinators)
+
+
+
+##### DATA ANALYSIS #####
+
+# summary of the 2 datasets
+summary(flowers)
+summary(pollinators)
 
 
 
