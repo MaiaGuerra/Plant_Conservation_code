@@ -30,7 +30,7 @@ View(pollinators)
 
 
 
-##### DATA ANALYSIS #####
+##### DESCRIPTIVE ANALYSIS #####
 
 # summary of the 2 datasets
 summary(flowers)
